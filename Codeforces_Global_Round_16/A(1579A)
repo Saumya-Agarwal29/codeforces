@@ -5,25 +5,18 @@ using namespace std;
 int main(){
     long long a;
     cin>>a;
-    for(long long i=0;i<a;i++){
-        vector<long long>b(3,0);
-        string s;
-        cin>>s;
-        for (long long j = 0; j < s.size(); j++)
+    for (long long i = 0; i < a; i++)
+    {
+        long long b,c;
+        cin>>b>>c;
+        long long d=b/2;
+        if (b%2==0)
         {
-            b[s[j]-'A']++;
+           d-=1; 
         }
-        if (b[0]>b[1])
-        {
-            cout<<"NO"<<endl;
-            continue;
-        }
-        b[1]-=b[0];
-        if (b[1]!=b[2])
-        {
-            cout<<"NO"<<endl;
-            continue;
-        }
-        cout<<"YES"<<endl;
+        
+        b-=d;
+        cout<<c/b<<endl;
     }
+    
 }
