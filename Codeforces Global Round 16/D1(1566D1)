@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    long long a;
+    cin >> a;
+    for (long long i = 0; i < a; i++)
+    {
+        long long b,c;
+        cin >> b >> c;
+        vector<pair<long long,long long> > d(c);
+        for (long long j = 0; j < c; j++)
+        {
+            cin>>d[j].first;
+            d[j].second=c-j-1;
+        }
+        sort(d.begin(),d.end());
+        long long result=0;
+        for (long long j = 0; j < c; j++)
+        {
+            for (long long h = j+1; h < c; h++)
+            {
+              if (d[h].second<d[j].second)
+            {
+                result++;
+            }   
+            }
+        }
+        cout<<result<<endl;
+    }
+}
