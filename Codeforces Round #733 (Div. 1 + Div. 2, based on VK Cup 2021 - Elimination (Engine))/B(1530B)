@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    long long a;
+    cin >> a;
+    for (long long i = 0; i < a; i++)
+    {
+        long long b, c;
+        cin >> b >> c;
+        for (long long j = 0; j < c; j++)
+        {
+            cout << (j % 2 == 0) ? "1" : "0";
+        }
+        cout << endl;
+        for (long long j = 1; j < b - 1; j++)
+        {
+            if (j % 2 == 1||j==b-2)
+            {
+                for (long long h = 0; h < c; h++)
+                {
+                    cout << '0';
+                }
+                cout<<endl;
+            }
+            else
+            {
+                cout << "1";
+                for (long long h = 0; h < c - 2; h++)
+                {
+                    cout << '0';
+                }
+                cout << '1' << endl;
+            }
+        }
+        for (long long j = 0; j < c; j++)
+        {
+            cout << (j % 2 == 0) ? "1" : "0";
+        }
+        cout << endl;
+    }
+}
